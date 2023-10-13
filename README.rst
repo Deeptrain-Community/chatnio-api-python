@@ -1,37 +1,39 @@
 =======
-chatnio
+ChatNio Python Library
 =======
-
-
-.. image:: https://img.shields.io/pypi/v/chatnio.svg
-        :target: https://pypi.python.org/pypi/chatnio
-
-.. image:: https://img.shields.io/travis/Deeptrain-Community/chatnio-api-python.svg
-        :target: https://travis-ci.com/Deeptrain-Community/chatnio-api-python
-
-.. image:: https://readthedocs.org/projects/chatnio/badge/?version=latest
-        :target: https://chatnio.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-
-
 
 
 The official Python library for the Chat Nio API
 
-
+* Authors: Deeptrain Team
 * Free software: MIT license
-* Documentation: https://chatnio.readthedocs.io.
-
+* Documentation: https://docs.chatnio.net
 
 Features
---------
+========
 
-* TODO
+* Chat
+* Conversation
+* Quota
+* Subscription and Package
 
-Credits
--------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+Installation
+============
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+Install using `pip`
+
+.. code-block:: bash
+
+    pip install --upgrade chatnio
+
+And then import it
+
+.. code-block:: python
+
+    import chatnio
+
+
+Usage
+=====
+

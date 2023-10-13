@@ -1,8 +1,9 @@
+# Desc: Quota Operations for Chat Nio
 from .auth import authenticate_require, is_authenticated
 from .globals import client, AuthenticationError
 
 
-class Subscription:
+class Subscription(object):
     """
     The subscription status for the Chat Nio API
 
