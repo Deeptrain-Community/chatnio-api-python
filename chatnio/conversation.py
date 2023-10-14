@@ -95,7 +95,7 @@ class Conversation(object):
     def __init__(self, data: dict):
         self.id = data["id"]
         self.name = data["name"]
-        self.messages = Message.parse_list(data["messages"])
+        self.messages = Message.parse_list(data.get("messages", data.get("message", [])))
 
     def __str__(self):
         return f"Conversation(id={self.id}, name={self.name}, length={self.length})"

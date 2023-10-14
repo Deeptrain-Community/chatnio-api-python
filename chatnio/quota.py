@@ -59,6 +59,9 @@ def buy_quota(quota: int) -> bool:
 
     authenticate_require()
 
+    if quota <= 0:
+        raise ValueError("Quota must be greater than 0")
+
     resp = client.post("/buy", json={"quota": quota})
     resp.raise_for_status()
 
@@ -85,7 +88,7 @@ def get_subscription() -> Subscription:
     return Subscription(data)
 
 
-def buy_subscription() -> bool:
+def buy_subscription(month: int) -> bool:
     """
     Buy subscription for the Chat Nio API
     :return: The status of the purchase (True if successful)
@@ -93,7 +96,9 @@ def buy_subscription() -> bool:
 
     authenticate_require()
 
-    resp = client.post("/subscribe")
+    if month <= 0:
+        raise ValueError("Month must be greater than 0")
+    resp = client.post("/subscribe", json={"month": month})
     resp.raise_for_status()
 
     data = resp.json()
