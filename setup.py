@@ -12,6 +12,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     "httpx>=0.13.3",
+    "websockets>=8.1",
 ]
 
 test_requirements = []

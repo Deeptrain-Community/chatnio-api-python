@@ -15,11 +15,26 @@ from .quota import (
     get_package,
 )
 
+from .conversation import (
+    Conversation,
+    list_conversations,
+    load_conversation,
+    delete_conversation,
+)
+
+from .chat import (
+    Chat,
+    PartialMessage,
+    new_chat,
+)
+
 from .globals import *
 
 __version__ = '0.0.1'
 __author__ = 'Deeptrain Community'
 __all__ = [
+    'API_BASE',
+    'CHAT_URL',
     'AuthenticationError',
 
     'get_token',
@@ -34,4 +49,13 @@ __all__ = [
     'get_package',
     'get_subscription',
     'buy_subscription',
+
+    'Conversation',
+    'list_conversations',
+    'load_conversation',
+    'delete_conversation',
+
+    'Chat',
+    'PartialMessage',
+    'new_chat',
 ]
