@@ -102,7 +102,7 @@ class Chat(object):
         """
 
         await self.send({
-            "type": "message",
+            "type": "chat",
             "message": message,
             "model": model,
             "web": web,
