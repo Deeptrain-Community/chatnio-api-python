@@ -57,7 +57,6 @@ Usage
 .. code-block:: python
 
     chat = await chatnio.new_chat()
-    chat.send_message("Hello World", "user_id")
 
     async for message in chat.ask("Hello, world!"):
         print(message.message, end="")
