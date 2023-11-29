@@ -32,7 +32,7 @@ def test_get_subscription():
 
 
 def _test_buy_subscription():
-    result = buy_subscription(1)
+    result = buy_subscription(1, 1)
     logging.debug(f"[quota]: buy subscription: {result}")
 
     assert result

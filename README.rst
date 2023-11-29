@@ -103,7 +103,7 @@ Usage
     print(subscription.is_subscribed, subscription.expired)
 
     # buy subscription
-    state = chatnio.buy_subscription(1) # 1 month
+    state = chatnio.buy_subscription(1, 1) # 1 month of basic plan
     print(state)
 
     # get package

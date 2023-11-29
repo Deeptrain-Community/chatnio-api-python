@@ -88,7 +88,7 @@ def get_subscription() -> Subscription:
     return Subscription(data)
 
 
-def buy_subscription(month: int) -> bool:
+def buy_subscription(level: int, month: int) -> bool:
     """
     Buy subscription for the Chat Nio API
     :return: The status of the purchase (True if successful)
@@ -98,7 +98,7 @@ def buy_subscription(month: int) -> bool:
 
     if month <= 0:
         raise ValueError("Month must be greater than 0")
-    resp = client.post("/subscribe", json={"month": month})
+    resp = client.post("/subscribe", json={"level": level, "month": month})
     resp.raise_for_status()
 
     data = resp.json()
