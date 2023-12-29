@@ -10,3 +10,5 @@ History
     * Update API
 - 0.1.3 (2023-11-29)
     * Add Subscription Level
+- 0.1.4 (2023-12-01)
+    * Add Customize Endpoint Option

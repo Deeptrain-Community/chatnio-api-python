@@ -2,7 +2,6 @@
 import httpx
 
 API_BASE = "https://api.chatnio.net"
-CHAT_URL = "wss://api.chatnio.net/chat"
 
 client = httpx.Client(
     base_url=API_BASE,
@@ -11,6 +10,22 @@ client = httpx.Client(
         "Accept": "application/json",
     },
 )
+
+
+def set_endpoint(endpoint: str) -> None:
+    """
+    Set the endpoint for the Chat Nio API
+    :param endpoint: The endpoint for the Chat Nio API
+    """
+
+    global API_BASE
+    API_BASE = endpoint
+    client.base_url = endpoint
+
+
+def get_chat_url():
+    # http to ws, https to wss
+    return API_BASE.replace("http", "ws").replace("https", "wss") + "/chat"
 
 
 class AuthenticationError(Exception):

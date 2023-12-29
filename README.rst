@@ -45,6 +45,9 @@ Usage
     # or read from environment variable
     chatnio.set_key_from_env("CHATNIO_TOKEN")
 
+    # set custom api endpoint (default: https://api.chatnio.net)
+    # chatnio.set_endpoint("https://example.com/api")
+
     # clear token
     chatnio.clear_key()
 

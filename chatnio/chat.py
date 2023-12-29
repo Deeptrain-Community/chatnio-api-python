@@ -3,7 +3,7 @@ import json
 from typing import AsyncGenerator
 import websockets
 
-from .globals import CHAT_URL
+from .globals import get_chat_url
 from .auth import is_authenticated, get_token
 
 
@@ -46,9 +46,9 @@ class Chat(object):
     token: str
     connection: websockets.WebSocketClientProtocol = None
 
-    def __init__(self, conversation_id: int = -1, endpoint: str = CHAT_URL):
+    def __init__(self, conversation_id: int = -1):
         self.id = conversation_id
-        self.uri = endpoint or CHAT_URL
+        self.uri = get_chat_url()
         self._waiting = False
 
     @property
@@ -224,14 +224,13 @@ class Chat(object):
         return self.id
 
 
-async def new_chat(conversation_id: int = -1, endpoint: str = CHAT_URL) -> Chat:
+async def new_chat(conversation_id: int = -1) -> Chat:
     """
     Create a new chat connection for the Chat Nio API
     :param conversation_id: The id of the conversation to connect to (default: -1)
-    :param endpoint: The endpoint to connect to (default: CHAT_URL)
     :return: The `chat` instance
     """
 
-    chat = Chat(conversation_id, endpoint)
+    chat = Chat(conversation_id)
     await chat.connect()
     return chat

@@ -33,8 +33,8 @@ from .globals import *
 __version__ = '0.0.1'
 __author__ = 'Deeptrain Community'
 __all__ = [
+    'set_endpoint',
     'API_BASE',
-    'CHAT_URL',
     'AuthenticationError',
 
     'get_token',
